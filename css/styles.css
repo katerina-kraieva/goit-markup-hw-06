@@ -754,7 +754,7 @@ h3 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -847,6 +847,7 @@ h3 {
 .form-order-comment {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
+  resize: none;
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 12px 16px;
@@ -856,6 +857,18 @@ h3 {
 .form-order-comment:focus {
   border: 1px solid var(--accent-color);
   outline: none;
+}
+.form-order-comment + .form-order-label {
+  position: absolute;
+  top: 34px;
+  left: 16px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-order-comment:focus + .form-order-label,
+.form-order-comment:not(:placeholder-shown) + .form-order-label {
+  color: var(--accent-color);
+  left: 16px;
+  transform: translateY(-56px);
 }
 .form-order-checkbox {
   display: flex;
